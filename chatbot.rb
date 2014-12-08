@@ -19,12 +19,13 @@ RESPONSES = { 'goodbye' => 'bye',
           	  'my favorite color is (.*)' => '%{c1} is a great color but i like green better',
           	  'quit' => 'see yah later'}
 
-puts "Hello, what's your name?"
+puts "R2D2: Hello, what's your name?"
 name = gets.chomp
-puts "Hello #{name}"
+print "R2D2: Hello #{name}\n#{name}: "
 while(input = gets.chomp) do
-  puts get_response(input)
+  puts "R2D2: " + get_response(input)
   if input == "quit"
   	break
-  end	
+  end
+  print "#{name}: "	
 end
