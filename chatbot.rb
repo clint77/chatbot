@@ -10,11 +10,13 @@ RESPONSES = { 'goodbye' => 'bye',
               'the weather is (.*)' => 'I hate it when it\'s %{c1}', 
               'I love (.*)' => 'I love %{c1} too', 
               'I groove to (.*) and (.*)' => 'I love %{c1} but I hate %{c2}',
-          	  'I play (.*)' => 'I love %{c1} too', 
+          	  'I play (.*)' => 'I love playing %{c1} too', 
           	  'hey' => 'hey you',
           	  'hello' => 'oh hello there',
           	  'welcome' => 'how nice of you',
-          	  'take care' => 'be safe my friend'}
+          	  'take care' => 'be safe my friend',
+          	  'I feel (.*)' => 'it is perfectly fine to feel %{c1} today',
+          	  'my favorite color is (.*)' => '%{c1} is a great color but i like green better'}
 
 puts "Hello, what's your name?"
 name = gets.chomp
