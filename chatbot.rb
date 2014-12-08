@@ -16,11 +16,15 @@ RESPONSES = { 'goodbye' => 'bye',
           	  'welcome' => 'how nice of you',
           	  'take care' => 'be safe my friend',
           	  'I feel (.*)' => 'it is perfectly fine to feel %{c1} today',
-          	  'my favorite color is (.*)' => '%{c1} is a great color but i like green better'}
+          	  'my favorite color is (.*)' => '%{c1} is a great color but i like green better',
+          	  'quit' => 'see yah later'}
 
 puts "Hello, what's your name?"
 name = gets.chomp
 puts "Hello #{name}"
 while(input = gets.chomp) do
   puts get_response(input)
+  if input == "quit"
+  	break
+  end	
 end
