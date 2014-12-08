@@ -53,5 +53,14 @@ while(input = gets.chomp) do
   if input == "quit"
   	break
   end
+  if input == "add"
+  	print "enter new response: "
+  	newKey = gets.chomp
+  	print "enter new reply by R2D2: "
+  	newValue = gets.chomp
+  	RESPONSES.store(newKey, newValue)
+  	keys = RESPONSES.keys
+  	
+  end	
   print "#{name}: ".green
 end
