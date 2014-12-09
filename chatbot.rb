@@ -1,3 +1,6 @@
+require 'yaml'
+
+
 def get_response(input)
   key = RESPONSES.keys.select {|k| /#{k}/ =~ input }.sample
   /#{key}/ =~ input
@@ -21,6 +24,10 @@ RESPONSES = { 'goodbye' => 'bye',
           	  'fine' => 'fantastic!',
           	  'favorite numbers are (.*) and (.*) and (.*)' => 'the numbers %{c1}, %{c2} and %{c3} are awesome!',
               'quit' => 'see yah later'}
+
+newResponses = YAML::load_file "botResponses.yml"
+puts newResponses.inspect
+RESPONSES.replace(newResponses)
 
 class String
 def black;          "\033[30m#{self}\033[0m" end
@@ -60,7 +67,14 @@ while(input = gets.chomp) do
   	newValue = gets.chomp
   	RESPONSES.store(newKey, newValue)
   	keys = RESPONSES.keys
+  	puts "#{keys}"
   	
   end	
   print "#{name}: ".green
+
 end
+
+fname = "botResponses.yml"
+somefile = File.open(fname, "w")
+somefile.puts RESPONSES.to_yaml
+somefile.close
